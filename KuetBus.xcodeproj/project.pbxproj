@@ -1,0 +1,803 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78B3E6591BE094D889833787 /* Pods_KuetBusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 869EBE53A95146F994191630 /* Pods_KuetBusTests.framework */; };
+		9495E7DDA658FE5F32142901 /* Pods_KuetBus_KuetBusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B96BE76B5C79D546F52CBDF /* Pods_KuetBus_KuetBusUITests.framework */; };
+		B1B48C289CE2FB2D83EF2AC2 /* Pods_KuetBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A13E88BC6B6CF2C1DB0265 /* Pods_KuetBus.framework */; };
+		BC4D93242396ED5C004EF95C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC4D93222396ED5C004EF95C /* Model.xcdatamodeld */; };
+		BC4D9326239704C0004EF95C /* DatabaseM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D9325239704C0004EF95C /* DatabaseM.swift */; };
+		BC4D932823971321004EF95C /* DatabaseCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D932723971321004EF95C /* DatabaseCRUD.swift */; };
+		BC7DB4F7238B1AD2001B8963 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DB4F6238B1AD2001B8963 /* TableViewController.swift */; };
+		CACAB3B423897F0F00FA24D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3B323897F0F00FA24D3 /* AppDelegate.swift */; };
+		CACAB3B623897F0F00FA24D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3B523897F0F00FA24D3 /* SceneDelegate.swift */; };
+		CACAB3B823897F0F00FA24D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3B723897F0F00FA24D3 /* ViewController.swift */; };
+		CACAB3BB23897F0F00FA24D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACAB3B923897F0F00FA24D3 /* Main.storyboard */; };
+		CACAB3BD23897F1300FA24D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACAB3BC23897F1300FA24D3 /* Assets.xcassets */; };
+		CACAB3C023897F1300FA24D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACAB3BE23897F1300FA24D3 /* LaunchScreen.storyboard */; };
+		CACAB3CB23897F1300FA24D3 /* KuetBusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3CA23897F1300FA24D3 /* KuetBusTests.swift */; };
+		CACAB3D623897F1300FA24D3 /* KuetBusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3D523897F1300FA24D3 /* KuetBusUITests.swift */; };
+		CACAB3E42389836300FA24D3 /* kuetlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CACAB3E32389836300FA24D3 /* kuetlogo.png */; };
+		CACAB3EA23898EA000FA24D3 /* busTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3E923898EA000FA24D3 /* busTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CACAB3C723897F1300FA24D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACAB3A823897F0F00FA24D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACAB3AF23897F0F00FA24D3;
+			remoteInfo = KuetBus;
+		};
+		CACAB3D223897F1300FA24D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACAB3A823897F0F00FA24D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACAB3AF23897F0F00FA24D3;
+			remoteInfo = KuetBus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BC4D92E22396E01B004EF95C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3733320D2F4FD358BFD81011 /* Pods-KuetBus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBus.debug.xcconfig"; path = "Target Support Files/Pods-KuetBus/Pods-KuetBus.debug.xcconfig"; sourceTree = "<group>"; };
+		869EBE53A95146F994191630 /* Pods_KuetBusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KuetBusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B96BE76B5C79D546F52CBDF /* Pods_KuetBus_KuetBusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KuetBus_KuetBusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96247A659F012FE571F0C535 /* Pods-KuetBus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBus.release.xcconfig"; path = "Target Support Files/Pods-KuetBus/Pods-KuetBus.release.xcconfig"; sourceTree = "<group>"; };
+		AA06E51F7170492E1844C49A /* Pods-KuetBus-KuetBusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBus-KuetBusUITests.debug.xcconfig"; path = "Target Support Files/Pods-KuetBus-KuetBusUITests/Pods-KuetBus-KuetBusUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE81DDDB6A266F1E4462B64F /* Pods-KuetBus-KuetBusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBus-KuetBusUITests.release.xcconfig"; path = "Target Support Files/Pods-KuetBus-KuetBusUITests/Pods-KuetBus-KuetBusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BC4D93232396ED5C004EF95C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		BC4D9325239704C0004EF95C /* DatabaseM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseM.swift; sourceTree = "<group>"; };
+		BC4D932723971321004EF95C /* DatabaseCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCRUD.swift; sourceTree = "<group>"; };
+		BC7DB4F6238B1AD2001B8963 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C52B48904480C25714EFB04B /* Pods-KuetBusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBusTests.release.xcconfig"; path = "Target Support Files/Pods-KuetBusTests/Pods-KuetBusTests.release.xcconfig"; sourceTree = "<group>"; };
+		CACAB3B023897F0F00FA24D3 /* KuetBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuetBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACAB3B323897F0F00FA24D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CACAB3B523897F0F00FA24D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CACAB3B723897F0F00FA24D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CACAB3BA23897F0F00FA24D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CACAB3BC23897F1300FA24D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CACAB3BF23897F1300FA24D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CACAB3C123897F1300FA24D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACAB3C623897F1300FA24D3 /* KuetBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuetBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACAB3CA23897F1300FA24D3 /* KuetBusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuetBusTests.swift; sourceTree = "<group>"; };
+		CACAB3CC23897F1300FA24D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACAB3D123897F1300FA24D3 /* KuetBusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KuetBusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACAB3D523897F1300FA24D3 /* KuetBusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KuetBusUITests.swift; sourceTree = "<group>"; };
+		CACAB3D723897F1300FA24D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACAB3E32389836300FA24D3 /* kuetlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kuetlogo.png; sourceTree = "<group>"; };
+		CACAB3E923898EA000FA24D3 /* busTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = busTableViewController.swift; sourceTree = "<group>"; };
+		D6A13E88BC6B6CF2C1DB0265 /* Pods_KuetBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KuetBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E38E07BEC8EDE05BA9D15594 /* Pods-KuetBusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBusTests.debug.xcconfig"; path = "Target Support Files/Pods-KuetBusTests/Pods-KuetBusTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CACAB3AD23897F0F00FA24D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1B48C289CE2FB2D83EF2AC2 /* Pods_KuetBus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB3C323897F1300FA24D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78B3E6591BE094D889833787 /* Pods_KuetBusTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB3CE23897F1300FA24D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9495E7DDA658FE5F32142901 /* Pods_KuetBus_KuetBusUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC4D92DB2396DB83004EF95C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D6A13E88BC6B6CF2C1DB0265 /* Pods_KuetBus.framework */,
+				8B96BE76B5C79D546F52CBDF /* Pods_KuetBus_KuetBusUITests.framework */,
+				869EBE53A95146F994191630 /* Pods_KuetBusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CACAB3A723897F0F00FA24D3 = {
+			isa = PBXGroup;
+			children = (
+				CACAB3B223897F0F00FA24D3 /* KuetBus */,
+				CACAB3C923897F1300FA24D3 /* KuetBusTests */,
+				CACAB3D423897F1300FA24D3 /* KuetBusUITests */,
+				CACAB3B123897F0F00FA24D3 /* Products */,
+				BC4D92DB2396DB83004EF95C /* Frameworks */,
+				F16A3E892AED1249FA6B6595 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		CACAB3B123897F0F00FA24D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CACAB3B023897F0F00FA24D3 /* KuetBus.app */,
+				CACAB3C623897F1300FA24D3 /* KuetBusTests.xctest */,
+				CACAB3D123897F1300FA24D3 /* KuetBusUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CACAB3B223897F0F00FA24D3 /* KuetBus */ = {
+			isa = PBXGroup;
+			children = (
+				CACAB3B323897F0F00FA24D3 /* AppDelegate.swift */,
+				CACAB3B523897F0F00FA24D3 /* SceneDelegate.swift */,
+				CACAB3B723897F0F00FA24D3 /* ViewController.swift */,
+				CACAB3B923897F0F00FA24D3 /* Main.storyboard */,
+				CACAB3E32389836300FA24D3 /* kuetlogo.png */,
+				CACAB3BC23897F1300FA24D3 /* Assets.xcassets */,
+				CACAB3BE23897F1300FA24D3 /* LaunchScreen.storyboard */,
+				CACAB3C123897F1300FA24D3 /* Info.plist */,
+				CACAB3E923898EA000FA24D3 /* busTableViewController.swift */,
+				BC7DB4F6238B1AD2001B8963 /* TableViewController.swift */,
+				BC4D93222396ED5C004EF95C /* Model.xcdatamodeld */,
+				BC4D9325239704C0004EF95C /* DatabaseM.swift */,
+				BC4D932723971321004EF95C /* DatabaseCRUD.swift */,
+			);
+			path = KuetBus;
+			sourceTree = "<group>";
+		};
+		CACAB3C923897F1300FA24D3 /* KuetBusTests */ = {
+			isa = PBXGroup;
+			children = (
+				CACAB3CA23897F1300FA24D3 /* KuetBusTests.swift */,
+				CACAB3CC23897F1300FA24D3 /* Info.plist */,
+			);
+			path = KuetBusTests;
+			sourceTree = "<group>";
+		};
+		CACAB3D423897F1300FA24D3 /* KuetBusUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CACAB3D523897F1300FA24D3 /* KuetBusUITests.swift */,
+				CACAB3D723897F1300FA24D3 /* Info.plist */,
+			);
+			path = KuetBusUITests;
+			sourceTree = "<group>";
+		};
+		F16A3E892AED1249FA6B6595 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3733320D2F4FD358BFD81011 /* Pods-KuetBus.debug.xcconfig */,
+				96247A659F012FE571F0C535 /* Pods-KuetBus.release.xcconfig */,
+				AA06E51F7170492E1844C49A /* Pods-KuetBus-KuetBusUITests.debug.xcconfig */,
+				AE81DDDB6A266F1E4462B64F /* Pods-KuetBus-KuetBusUITests.release.xcconfig */,
+				E38E07BEC8EDE05BA9D15594 /* Pods-KuetBusTests.debug.xcconfig */,
+				C52B48904480C25714EFB04B /* Pods-KuetBusTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CACAB3AF23897F0F00FA24D3 /* KuetBus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACAB3DA23897F1300FA24D3 /* Build configuration list for PBXNativeTarget "KuetBus" */;
+			buildPhases = (
+				4F30917BF7736ABA224B4252 /* [CP] Check Pods Manifest.lock */,
+				CACAB3AC23897F0F00FA24D3 /* Sources */,
+				CACAB3AD23897F0F00FA24D3 /* Frameworks */,
+				CACAB3AE23897F0F00FA24D3 /* Resources */,
+				BC4D92E22396E01B004EF95C /* Embed Frameworks */,
+				8651D1A8167EA583AF938DD4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KuetBus;
+			productName = KuetBus;
+			productReference = CACAB3B023897F0F00FA24D3 /* KuetBus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CACAB3C523897F1300FA24D3 /* KuetBusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACAB3DD23897F1300FA24D3 /* Build configuration list for PBXNativeTarget "KuetBusTests" */;
+			buildPhases = (
+				3693648DAABE674860AC9B28 /* [CP] Check Pods Manifest.lock */,
+				CACAB3C223897F1300FA24D3 /* Sources */,
+				CACAB3C323897F1300FA24D3 /* Frameworks */,
+				CACAB3C423897F1300FA24D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACAB3C823897F1300FA24D3 /* PBXTargetDependency */,
+			);
+			name = KuetBusTests;
+			productName = KuetBusTests;
+			productReference = CACAB3C623897F1300FA24D3 /* KuetBusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CACAB3D023897F1300FA24D3 /* KuetBusUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACAB3E023897F1300FA24D3 /* Build configuration list for PBXNativeTarget "KuetBusUITests" */;
+			buildPhases = (
+				BAE372486BB040B2FF29022E /* [CP] Check Pods Manifest.lock */,
+				CACAB3CD23897F1300FA24D3 /* Sources */,
+				CACAB3CE23897F1300FA24D3 /* Frameworks */,
+				CACAB3CF23897F1300FA24D3 /* Resources */,
+				28335F4A9D99758C13BF057E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACAB3D323897F1300FA24D3 /* PBXTargetDependency */,
+			);
+			name = KuetBusUITests;
+			productName = KuetBusUITests;
+			productReference = CACAB3D123897F1300FA24D3 /* KuetBusUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CACAB3A823897F0F00FA24D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Main Uddin Chisty";
+				TargetAttributes = {
+					CACAB3AF23897F0F00FA24D3 = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					CACAB3C523897F1300FA24D3 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = CACAB3AF23897F0F00FA24D3;
+					};
+					CACAB3D023897F1300FA24D3 = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = CACAB3AF23897F0F00FA24D3;
+					};
+				};
+			};
+			buildConfigurationList = CACAB3AB23897F0F00FA24D3 /* Build configuration list for PBXProject "KuetBus" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CACAB3A723897F0F00FA24D3;
+			productRefGroup = CACAB3B123897F0F00FA24D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CACAB3AF23897F0F00FA24D3 /* KuetBus */,
+				CACAB3C523897F1300FA24D3 /* KuetBusTests */,
+				CACAB3D023897F1300FA24D3 /* KuetBusUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CACAB3AE23897F0F00FA24D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACAB3C023897F1300FA24D3 /* LaunchScreen.storyboard in Resources */,
+				CACAB3BD23897F1300FA24D3 /* Assets.xcassets in Resources */,
+				CACAB3E42389836300FA24D3 /* kuetlogo.png in Resources */,
+				CACAB3BB23897F0F00FA24D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB3C423897F1300FA24D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB3CF23897F1300FA24D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28335F4A9D99758C13BF057E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KuetBus-KuetBusUITests/Pods-KuetBus-KuetBusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KuetBus-KuetBusUITests/Pods-KuetBus-KuetBusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KuetBus-KuetBusUITests/Pods-KuetBus-KuetBusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3693648DAABE674860AC9B28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KuetBusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F30917BF7736ABA224B4252 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KuetBus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8651D1A8167EA583AF938DD4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KuetBus/Pods-KuetBus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KuetBus/Pods-KuetBus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KuetBus/Pods-KuetBus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAE372486BB040B2FF29022E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KuetBus-KuetBusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CACAB3AC23897F0F00FA24D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC4D932823971321004EF95C /* DatabaseCRUD.swift in Sources */,
+				CACAB3EA23898EA000FA24D3 /* busTableViewController.swift in Sources */,
+				CACAB3B823897F0F00FA24D3 /* ViewController.swift in Sources */,
+				CACAB3B423897F0F00FA24D3 /* AppDelegate.swift in Sources */,
+				BC7DB4F7238B1AD2001B8963 /* TableViewController.swift in Sources */,
+				CACAB3B623897F0F00FA24D3 /* SceneDelegate.swift in Sources */,
+				BC4D9326239704C0004EF95C /* DatabaseM.swift in Sources */,
+				BC4D93242396ED5C004EF95C /* Model.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB3C223897F1300FA24D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACAB3CB23897F1300FA24D3 /* KuetBusTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACAB3CD23897F1300FA24D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACAB3D623897F1300FA24D3 /* KuetBusUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CACAB3C823897F1300FA24D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACAB3AF23897F0F00FA24D3 /* KuetBus */;
+			targetProxy = CACAB3C723897F1300FA24D3 /* PBXContainerItemProxy */;
+		};
+		CACAB3D323897F1300FA24D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACAB3AF23897F0F00FA24D3 /* KuetBus */;
+			targetProxy = CACAB3D223897F1300FA24D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CACAB3B923897F0F00FA24D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CACAB3BA23897F0F00FA24D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CACAB3BE23897F1300FA24D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CACAB3BF23897F1300FA24D3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CACAB3D823897F1300FA24D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CACAB3D923897F1300FA24D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CACAB3DB23897F1300FA24D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3733320D2F4FD358BFD81011 /* Pods-KuetBus.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86M3LY5Q44;
+				INFOPLIST_FILE = KuetBus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisty2996.KuetBus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CACAB3DC23897F1300FA24D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96247A659F012FE571F0C535 /* Pods-KuetBus.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86M3LY5Q44;
+				INFOPLIST_FILE = KuetBus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisty2996.KuetBus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CACAB3DE23897F1300FA24D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E38E07BEC8EDE05BA9D15594 /* Pods-KuetBusTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86M3LY5Q44;
+				INFOPLIST_FILE = KuetBusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisty2996.KuetBusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KuetBus.app/KuetBus";
+			};
+			name = Debug;
+		};
+		CACAB3DF23897F1300FA24D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C52B48904480C25714EFB04B /* Pods-KuetBusTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86M3LY5Q44;
+				INFOPLIST_FILE = KuetBusTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisty2996.KuetBusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KuetBus.app/KuetBus";
+			};
+			name = Release;
+		};
+		CACAB3E123897F1300FA24D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA06E51F7170492E1844C49A /* Pods-KuetBus-KuetBusUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86M3LY5Q44;
+				INFOPLIST_FILE = KuetBusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisty2996.KuetBusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KuetBus;
+			};
+			name = Debug;
+		};
+		CACAB3E223897F1300FA24D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE81DDDB6A266F1E4462B64F /* Pods-KuetBus-KuetBusUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 86M3LY5Q44;
+				INFOPLIST_FILE = KuetBusUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chisty2996.KuetBusUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KuetBus;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CACAB3AB23897F0F00FA24D3 /* Build configuration list for PBXProject "KuetBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACAB3D823897F1300FA24D3 /* Debug */,
+				CACAB3D923897F1300FA24D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACAB3DA23897F1300FA24D3 /* Build configuration list for PBXNativeTarget "KuetBus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACAB3DB23897F1300FA24D3 /* Debug */,
+				CACAB3DC23897F1300FA24D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACAB3DD23897F1300FA24D3 /* Build configuration list for PBXNativeTarget "KuetBusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACAB3DE23897F1300FA24D3 /* Debug */,
+				CACAB3DF23897F1300FA24D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACAB3E023897F1300FA24D3 /* Build configuration list for PBXNativeTarget "KuetBusUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACAB3E123897F1300FA24D3 /* Debug */,
+				CACAB3E223897F1300FA24D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BC4D93222396ED5C004EF95C /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BC4D93232396ED5C004EF95C /* Model.xcdatamodel */,
+			);
+			currentVersion = BC4D93232396ED5C004EF95C /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CACAB3A823897F0F00FA24D3 /* Project object */;
+}

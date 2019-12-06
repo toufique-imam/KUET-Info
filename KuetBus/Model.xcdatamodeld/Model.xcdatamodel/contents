@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Bus" representedClassName="BusMO" syncable="YES">
+        <attribute name="remarks" optional="YES" attributeType="String"/>
+        <attribute name="starting_spot_time" optional="YES" attributeType="String"/>
+        <attribute name="starting_time_from_campus" optional="YES" attributeType="String"/>
+        <attribute name="tripname" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Phone" representedClassName="PhoneMO" syncable="YES">
+        <attribute name="mobile_no" optional="YES" attributeType="String"/>
+        <attribute name="name_designation" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Teacher" representedClassName="TeacherMO" syncable="YES">
+        <attribute name="designation" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="mail" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="weblink" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Teacher" positionX="-36" positionY="9" width="128" height="133"/>
+        <element name="Phone" positionX="0" positionY="90" width="128" height="73"/>
+        <element name="Bus" positionX="27" positionY="108" width="128" height="103"/>
+    </elements>
+</model>
