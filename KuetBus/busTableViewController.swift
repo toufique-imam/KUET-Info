@@ -16,14 +16,14 @@ class BusCellClass: UITableViewCell{
 	@IBOutlet weak var Tripname: UILabel!
 	@IBOutlet weak var Campus: UILabel!
 	@IBOutlet weak var Spot: UILabel!
+	//@IBOutlet weak var Remarks: UITextField!
 	@IBOutlet weak var Remarks: UILabel!
 }
 class busTableViewController: UITableViewController {
-	var finaldata=Array< Dictionary<String,Any> >()
-	
+	var finaldata=Array< busdata >()
+	var sqlitedb = SqliteDbStore(databasename: "BUSDATA")
 	func getDataBus()
 	{
-		//var fresx = Array<Any>();
 		let group = DispatchGroup();
 		let headers = [
 			"x-rapidapi-host": "kuet_bus.p.rapidapi.com",
@@ -49,77 +49,87 @@ class busTableViewController: UITableViewController {
 						let vdata = jsonstr?.data(using: .utf8)!
 						do{
 							let fjson = try JSON(data:vdata!);
+							var tempara = Array<busdata>();
+							for (_,dt):(String,JSON) in fjson {
+								let temp = busdata(remarks: dt["Remarks"].string!, starting_spot_time: dt["StartingSpotTime"].string!, starting_time_from_campus: dt["StartingTimefromCampus"].string!, tripname: dt["TripName"].string!);
+								tempara.append(temp);
+							}
+							self.finaldata = tempara;
+							group.leave()
+							//return
 						}
-						catch {
-							
+						catch let error as NSError{
+							print(error)
+							exit(-1)
 						}
-						
-						/*                       do {
-						if let jsonara = try JSONSerialization.jsonObject(with: vdata!, options: .allowFragments) as? [Dictionary<String,Any>]
-						{
-						self.finaldata =  jsonara;
-						print(jsonara.count)
-						group.leave();
-						
-						}
-						else
-						{
-						print("bad json")
-						}
-						}catch let error as NSError {
-						print(error)
-						}*/
 					}
 				})
 				dataTask.resume();
 			}}
 	}
+	func updatedata() {
+		DispatchQueue.main.async {
+			self.getDataBus()
+		}
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10)
+		{
+			print(self.finaldata.count)
+			self.sqlitedb.delete();
+			for busdata in self.finaldata {
+				self.sqlitedb.create_bus(record: busdata)
+			}
+			self.tableView.reloadData()
+			return;
+		}
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		do{
+			try self.finaldata = self.sqlitedb.readdata_bus();
+		}
+		catch let error as NSError {
+			print(error)
+		}
+		/*
 		DispatchQueue.main.async {
-			self.getDataBus();
+			self.updatedata()
 		}
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3)
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10)
 		{
-			self.tableView.reloadData()
-		}
-		// Uncomment the following line to preserve selection between presentations
-		// self.clearsSelectionOnViewWillAppear = false
-		// self.navigationItem.rightBarButtonItem = self.editButtonItem
+			do{
+				try self.finaldata = self.sqlitedb.readdata_bus();
+				self.tableView.reloadData()
+			}
+			catch let error as NSError {
+				print(error)
+			}
+		}*/
 	}
 	
-	// MARK: - Table view data source
 	
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		// #warning Incomplete implementation, return the number of sections
 		return 1
 	}
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		// #warning Incomplete implementation, return the number of rows
-		//var i=0;
-		//while(i<self.finaldata.count)
-		//{
-		//    print(self.finaldata[i])
-		//    i=i+1;
-		//}
+		print(self.finaldata.count)
 		return self.finaldata.count
 	}
 	
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "BusDataCell", for: indexPath) as! BusCellClass
-		//cell.Tripname!.Text="nice"
-		// Configure the cell..
 		let datanow = self.finaldata[indexPath.row]
-		//print(datanow);
-		cell.Campus?.text = (datanow["StartingTimefromCampus"] as! String)
-		cell.Tripname?.text = (datanow["TripName"] as! String)
-		cell.Spot?.text = (datanow["StartingSpotTime"] as! String)
-		cell.Remarks?.text = (datanow["Remarks"] as! String)
+		cell.Campus?.text = (datanow.starting_time_from_campus)
+		cell.Tripname?.text = (datanow.tripname)
+		cell.Spot?.text = (datanow.starting_spot_time)
+		cell.Remarks?.text = (datanow.remarks)
+		cell.Remarks?.sizeToFit()
+		//cell.Campus?.text = "KUET";
 		return cell
+		
 	}
 	
 	

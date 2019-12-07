@@ -26,14 +26,15 @@ class phone {
 	}
 }
 class teachers {
-	var name,weblink,designation,image,phone,mail:String;
-	init(name: String,weblink:String,designation:String,image:String,phone:String,mail:String){
+	var name,weblink,designation,image,phone,mail,dept:String;
+	init(name: String,weblink:String,designation:String,image:String,phone:String,mail:String,dept:String){
 		self.name = name;
 		self.weblink = weblink;
 		self.designation = designation;
 		self.image = image;
 		self.phone = phone;
 		self.mail = mail;
+		self.dept = dept;
 	}
 }
 class SqliteDbStore {
@@ -102,7 +103,7 @@ class SqliteDbStore {
 			}
 		}
 		else if(datatype == 2){
-			let ret =  sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS teachers (name TEXT NOT NULL,weblink TEXT NOT NULL, designation TEXT NOT NULL,image TEXT,phone TEXT NOT NULL,mail TEXT NOT NULL)", nil, nil, nil)
+			let ret =  sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS teachers (name TEXT NOT NULL,weblink TEXT NOT NULL, designation TEXT NOT NULL,image TEXT,phone TEXT NOT NULL,mail TEXT NOT NULL,dept TEXT NOT NULL)", nil, nil, nil)
 			if (ret != SQLITE_OK){
 				logDbErr("Error creating db table - Records")
 				throw SqliteError(message: "unable to create table Records")

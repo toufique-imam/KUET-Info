@@ -48,7 +48,7 @@ extension SqliteDbStore{
 		}
 	}
 	func create_teacher (record: teachers){
-		//INSERT INTO teachers (name,weblink,designation,image,phone,mail) values (?,?,?,?,?,?)
+		//INSERT INTO teachers (name,weblink,designation,image,phone,mail,dept) values (?,?,?,?,?,?,?)
 		guard self.prepareInsertEntryStmt() == SQLITE_OK else { return }
 		defer {
 			sqlite3_reset(self.insertEntryStmt)
@@ -80,6 +80,11 @@ extension SqliteDbStore{
 				return
 			}
 			if sqlite3_bind_text(self.insertEntryStmt, 6, (record.mail as NSString).utf8String, -1, nil) != SQLITE_OK
+			{
+				logDbErr("sqlite3_bind_text(insertEntryStmt)")
+				return
+			}
+			if sqlite3_bind_text(self.insertEntryStmt, 7, (record.mail as NSString).utf8String, -1, nil) != SQLITE_OK
 			{
 				logDbErr("sqlite3_bind_text(insertEntryStmt)")
 				return
@@ -121,17 +126,70 @@ extension SqliteDbStore{
 			return;
 		}
 	}
-	
-	/*
-	func read_bus() throws -> [busdata] {
-		guard self.prepareReadEntryStmt() == SQLITE_OK else { throw SqliteError(message: "error in preparing read entry in statement" )}
-
+	func delete(){
+		guard self.prepareDeleteEntryStmt() == SQLITE_OK else { return }
+		defer {
+			sqlite3_reset(self.deleteEntryStmt);
+		}
+		let r = sqlite3_step(self.deleteEntryStmt)
+		if r != SQLITE_DONE {
+			logDbErr("sqlite3_step_deleteEntryStmt\n")
+			return
+		}
+	}
+	func readdata_bus() throws ->Array<busdata> {
+		var res = Array<busdata>()
+		guard self.prepareReadEntryStmt() == SQLITE_OK else {
+			return res
+		}
 		defer {
 			sqlite3_reset(self.readEntryStmt)
 		}
-		
-	}*/
-	
+		var r = sqlite3_step(self.readEntryStmt)
+		if r != SQLITE_ROW {
+			logDbErr("read error\n")
+			return res;
+		}
+		while r == SQLITE_ROW {
+			//CREATE TABLE IF NOT EXISTS busdata (tripname TEXT NOT NULL,starting_time_from_campus TEXT NOT NULL, starting_spot_time TEXT NOT NULL,remarks TEXT
+			let tripname = String(cString: sqlite3_column_text(self.readEntryStmt, 0)!)
+			let st_time_campus = String(cString: sqlite3_column_text(self.readEntryStmt, 1)!)
+			let st_time_spot = String(cString: sqlite3_column_text(self.readEntryStmt, 2)!)
+			let remarks = String(cString: sqlite3_column_text(self.readEntryStmt, 3)!)
+			let nowdata = busdata(remarks: remarks, starting_spot_time: st_time_spot, starting_time_from_campus: st_time_campus, tripname: tripname)
+			res.append(nowdata)
+			r = sqlite3_step(self.readEntryStmt)
+		}
+		return res
+	}
+	func readdata_teacher() throws -> Array<teachers> {
+		var res = Array<teachers>()
+		guard self.prepareReadEntryStmt() == SQLITE_OK else { return res  }
+		defer {
+			sqlite3_reset(self.readEntryStmt)
+		}
+		var r = sqlite3_step(self.readEntryStmt)
+		if(r != SQLITE_ROW) {
+			logDbErr("read error\n");
+			return res;
+		}
+		while( r == SQLITE_ROW ) {
+			//CREATE TABLE IF NOT EXISTS teachers (name TEXT NOT NULL,weblink TEXT NOT NULL, designation TEXT NOT NULL,image TEXT,phone TEXT NOT NULL,mail TEXT NOT NULL,dept TEXT NOT NULL)
+			let name = String(cString: sqlite3_column_text(self.readEntryStmt, 0)!);
+			let weblink = String(cString: sqlite3_column_text(self.readEntryStmt, 1)!);
+			let designation = String(cString: sqlite3_column_text(self.readEntryStmt, 2)!);
+			let image = String(cString: sqlite3_column_text(self.readEntryStmt, 3)!);
+			let phone = String(cString: sqlite3_column_text(self.readEntryStmt, 4)!);
+			let mail = String(cString: sqlite3_column_text(self.readEntryStmt, 5)!);
+			let dept = String(cString: sqlite3_column_text(self.readEntryStmt, 6)!);
+			print(name,weblink,designation,image,phone,mail,dept)
+			let nowdata = teachers(name: name, weblink: weblink, designation: designation, image: image, phone: phone, mail: mail, dept: dept)
+			res.append(nowdata)
+			r = sqlite3_step(self.readEntryStmt);
+		}
+		print(res.count)
+		return res;
+	}
 	func prepareInsertEntryStmt()->Int32 {
 		guard insertEntryStmt == nil else { return SQLITE_OK }
 		if(datatype == 1){
@@ -143,7 +201,7 @@ extension SqliteDbStore{
 			return r;
 		}
 		if(datatype == 2){
-			let sql = "INSERT INTO teachers (name,weblink,designation,image,phone,mail) values (?,?,?,?,?,?)";
+			let sql = "INSERT INTO teachers (name,weblink,designation,image,phone,mail,dept) values (?,?,?,?,?,?,?)";
 			let r = sqlite3_prepare(db, sql, -1, &insertEntryStmt, nil);
 			if r != SQLITE_OK {
 				logDbErr("sqlite3_prepare INSERT ENTRY stmt");
@@ -191,7 +249,7 @@ extension SqliteDbStore{
 	func prepareDeleteEntryStmt()->Int32 {
 		guard deleteEntryStmt == nil else { return SQLITE_OK }
 		if(datatype==1){
-			let sql = "DELETE * FROM busdata";
+			let sql = "DELETE FROM busdata";
 			let r = sqlite3_prepare(db, sql, -1, &deleteEntryStmt, nil)
 			if(r != SQLITE_OK) {
 				logDbErr("sqlite3_prepare delete entry stmt");
@@ -199,7 +257,7 @@ extension SqliteDbStore{
 			return r;
 		}
 		else if(datatype==2){
-			let sql = "DELETE * FROM teachers";
+			let sql = "DELETE FROM teachers";
 			let r = sqlite3_prepare(db, sql, -1, &deleteEntryStmt, nil)
 			if(r != SQLITE_OK) {
 				logDbErr("sqlite3_prepare delete entry stmt");
@@ -207,7 +265,7 @@ extension SqliteDbStore{
 			return r;
 		}
 		else if(datatype==3){
-			let sql = "DELETE * FROM phone";
+			let sql = "DELETE FROM phone";
 			let r = sqlite3_prepare(db, sql, -1, &deleteEntryStmt, nil)
 			if(r != SQLITE_OK) {
 				logDbErr("sqlite3_prepare delete entry stmt");
@@ -216,4 +274,5 @@ extension SqliteDbStore{
 		}
 		return 0;
 	}
+	
 }
