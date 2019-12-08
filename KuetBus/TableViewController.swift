@@ -85,20 +85,6 @@ class TableViewController: UITableViewController {
 				dataTask.resume();
 			}}
 	}
-	
-	/*	DispatchQueue.main.async {
-	//self.updatedata();
-	//self.getDataBus();
-	}
-	DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+10)
-	{
-	sqlitedb.delete()
-	print(self.finaldata.count)
-	for teacher in self.finaldata {
-	sqlitedb.create_teacher(record: teacher);
-	}
-	
-	}*/
 	func updatedata() {
 		DispatchQueue.main.async {
 			self.getDataBus()

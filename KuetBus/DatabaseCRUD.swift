@@ -182,7 +182,7 @@ extension SqliteDbStore{
 			let phone = String(cString: sqlite3_column_text(self.readEntryStmt, 4)!);
 			let mail = String(cString: sqlite3_column_text(self.readEntryStmt, 5)!);
 			let dept = String(cString: sqlite3_column_text(self.readEntryStmt, 6)!);
-			print(name,weblink,designation,image,phone,mail,dept)
+			//print(name,weblink,designation,image,phone,mail,dept)
 			let nowdata = teachers(name: name, weblink: weblink, designation: designation, image: image, phone: phone, mail: mail, dept: dept)
 			res.append(nowdata)
 			r = sqlite3_step(self.readEntryStmt);
