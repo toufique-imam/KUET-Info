@@ -87,9 +87,13 @@ class busTableViewController: UITableViewController {
 		
 		do{
 			try self.finaldata = self.sqlitedb.readdata_bus();
+			if(self.finaldata.count == 0){
+				self.updatedata();
+			}
 		}
 		catch let error as NSError {
 			print(error)
+			self.updatedata();
 		}
 		/*
 		DispatchQueue.main.async {

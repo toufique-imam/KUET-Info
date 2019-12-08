@@ -9,9 +9,17 @@
 import UIKit
 import SwiftyJSON
 
+
+class newteachercell: UITableViewCell {
+	@IBOutlet weak var mail: UILabel!
+	@IBOutlet weak var phone: UILabel!
+	@IBOutlet weak var name: UILabel!
+	@IBOutlet weak var weblink: UILabel!
+	@IBOutlet weak var designation: UILabel!
+}
 class TeachernewViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSource,UISearchBarDelegate {
 	
-
+	
 	@IBOutlet weak var myTableView: UITableView!
 	@IBOutlet weak var search: UISearchBar!
 	var searching = false;
@@ -97,54 +105,69 @@ class TeachernewViewController: UIViewController ,UITableViewDelegate ,UITableVi
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell=tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
+		let cell=tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! newteachercell
+		var nowdata: teachers
 		if searching {
-			let nowdata = filteredTeachers[indexPath.row]
-			cell.textLabel?.text = nowdata.name
-			cell.textLabel?.text = nowdata.phone
+			nowdata = filteredTeachers[indexPath.row]
 		}
 		else{
-			let nowData = finaldata[indexPath.row]
-			cell.textLabel?.text=nowData.name
+			nowdata = finaldata[indexPath.row]
 		}
+		cell.name?.text = nowdata.name;
+		cell.designation?.text = nowdata.designation;
+		cell.mail?.text = nowdata.mail;
+		cell.phone?.text = nowdata.phone;
+		cell.weblink?.text = nowdata.weblink;
 		return cell
 	}
 	
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		filteredTeachers = finaldata.filter({$0.name.lowercased().contains(searchText.lowercased())})
-		searching = true;
-		myTableView.reloadData()
+		if(searchText.count == 0){
+			searching = false;
+			myTableView.reloadData();
+		}
+		else{
+			filteredTeachers = finaldata.filter({
+				$0.contains_val(searchstr: searchText.lowercased())
+			})
+			searching = true;
+			myTableView.reloadData()
+		}
 	}
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		searching = false;
 		searchBar.text = "";
 		myTableView.reloadData()
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		do{
 			try self.finaldata = self.sqlitedb.readdata_teacher();
+			if(self.finaldata.count == 0){
+				self.updatedata();
+			}
 		}
 		catch let error as NSError {
 			print(error)
+			self.updatedata();
 		}
 		search.delegate = self;
 		myTableView.dataSource=self
 		myTableView.delegate=self
 		
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+		// Do any additional setup after loading the view.
+	}
+	
+	
+	/*
+	// MARK: - Navigation
+	
+	// In a storyboard-based application, you will often want to do a little preparation before navigation
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	// Get the new view controller using segue.destination.
+	// Pass the selected object to the new view controller.
+	}
+	*/
+	
 }

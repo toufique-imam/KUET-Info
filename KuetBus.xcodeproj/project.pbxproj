@@ -14,8 +14,6 @@
 		BC4D9326239704C0004EF95C /* DatabaseM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D9325239704C0004EF95C /* DatabaseM.swift */; };
 		BC4D932823971321004EF95C /* DatabaseCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4D932723971321004EF95C /* DatabaseCRUD.swift */; };
 		BC7DB4F7238B1AD2001B8963 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DB4F6238B1AD2001B8963 /* TableViewController.swift */; };
-		BC90D109239BD16900D3FB7C /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90D108239BD16900D3FB7C /* SearchFooter.swift */; };
-		BC90D10B239BDE4B00D3FB7C /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC90D10A239BDE4B00D3FB7C /* TeacherViewController.swift */; };
 		BCDCA5BD239C16EA002D64AE /* TeachernewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDCA5BC239C16EA002D64AE /* TeachernewViewController.swift */; };
 		CACAB3B423897F0F00FA24D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3B323897F0F00FA24D3 /* AppDelegate.swift */; };
 		CACAB3B623897F0F00FA24D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACAB3B523897F0F00FA24D3 /* SceneDelegate.swift */; };
@@ -70,8 +68,6 @@
 		BC4D9325239704C0004EF95C /* DatabaseM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseM.swift; sourceTree = "<group>"; };
 		BC4D932723971321004EF95C /* DatabaseCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCRUD.swift; sourceTree = "<group>"; };
 		BC7DB4F6238B1AD2001B8963 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		BC90D108239BD16900D3FB7C /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
-		BC90D10A239BDE4B00D3FB7C /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		BCDCA5BC239C16EA002D64AE /* TeachernewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachernewViewController.swift; sourceTree = "<group>"; };
 		C52B48904480C25714EFB04B /* Pods-KuetBusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KuetBusTests.release.xcconfig"; path = "Target Support Files/Pods-KuetBusTests/Pods-KuetBusTests.release.xcconfig"; sourceTree = "<group>"; };
 		CACAB3B023897F0F00FA24D3 /* KuetBus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KuetBus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,8 +166,6 @@
 				BC4D93222396ED5C004EF95C /* Model.xcdatamodeld */,
 				BC4D9325239704C0004EF95C /* DatabaseM.swift */,
 				BC4D932723971321004EF95C /* DatabaseCRUD.swift */,
-				BC90D108239BD16900D3FB7C /* SearchFooter.swift */,
-				BC90D10A239BDE4B00D3FB7C /* TeacherViewController.swift */,
 				BCDCA5BC239C16EA002D64AE /* TeachernewViewController.swift */,
 			);
 			path = KuetBus;
@@ -453,11 +447,9 @@
 				CACAB3EA23898EA000FA24D3 /* busTableViewController.swift in Sources */,
 				CACAB3B823897F0F00FA24D3 /* ViewController.swift in Sources */,
 				CACAB3B423897F0F00FA24D3 /* AppDelegate.swift in Sources */,
-				BC90D109239BD16900D3FB7C /* SearchFooter.swift in Sources */,
 				BCDCA5BD239C16EA002D64AE /* TeachernewViewController.swift in Sources */,
 				BC7DB4F7238B1AD2001B8963 /* TableViewController.swift in Sources */,
 				CACAB3B623897F0F00FA24D3 /* SceneDelegate.swift in Sources */,
-				BC90D10B239BDE4B00D3FB7C /* TeacherViewController.swift in Sources */,
 				BC4D9326239704C0004EF95C /* DatabaseM.swift in Sources */,
 				BC4D93242396ED5C004EF95C /* Model.xcdatamodeld in Sources */,
 			);

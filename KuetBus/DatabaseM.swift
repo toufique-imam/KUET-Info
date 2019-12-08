@@ -36,6 +36,24 @@ class teachers {
 		self.mail = mail;
 		self.dept = dept;
 	}
+	func contains_val(searchstr: String)->Bool {
+		if(self.name.lowercased().contains(searchstr)){
+			return true;
+		}
+		if(self.designation.lowercased().contains(searchstr)){
+			return true;
+		}
+		if(self.phone.lowercased().contains(searchstr)){
+			return true;
+		}
+		if(self.mail.lowercased().contains(searchstr)){
+			return true;
+		}
+		if(self.dept.lowercased().contains(searchstr)){
+			return true;
+		}
+		return false;
+	}
 }
 class SqliteDbStore {
 	let dbURL: URL
